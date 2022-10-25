@@ -1,7 +1,7 @@
 #library
 import subprocess, pyautogui,urllib.request
 #path teams
-subprocess.Popen(r'C:\WINDOWS\system32\notepad.exe')
+#subprocess.Popen(r'C:\WINDOWS\system32\notepad.exe')
 #position mouse and clic
 pyautogui.click(800, 20)
 #input name funtionary HSN
@@ -27,7 +27,7 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r'C:\Users\vmartinez\AppData\Local\Tesseract-OCR\tesseract.exe'
  
 # Read image from which text needs to be extracted
-img = cv2.imread("sample.jpg")
+img = cv2.imread("sample4.jpg")
  
 # Preprocessing the image starts
  
@@ -85,3 +85,23 @@ for cnt in contours:
     
     # Close the file
     file.close
+
+
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+ser = Service(r"C:\Users\vmartinez\Downloads\chromedriver_win32 (3)\chromedriver.exe")
+op = webdriver.ChromeOptions()
+s = webdriver.Chrome(service=ser, options=op)
+
+#driver = webdriver.Chrome (executable_path="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
+# maximize with maximize_window()
+s.maximize_window()
+s.get("https://www.tutorialspoint.com/index.htm")
+# identify element
+l=s.find_element_by_css_selector("h4")
+# get text and print
+print("Text is: " + l.text)
+
+
+
