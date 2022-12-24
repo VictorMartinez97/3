@@ -1,5 +1,5 @@
 #library
-import subprocess, pyautogui,urllib.request
+import subprocess, pyautogui,urllib.request, pyperclip, pytesseract, cv2
 #path teams
 #subprocess.Popen(r'C:\WINDOWS\system32\notepad.exe')
 #position mouse and clic
@@ -56,7 +56,7 @@ im2 = img.copy()
  
 # A text file is created and flushed
 file = open("recognized.txt", "w+")
-file.write("hi")
+file.write("")
 file.close()
  
 # Looping through the identified contours
@@ -101,7 +101,26 @@ s.get("https://www.tutorialspoint.com/index.htm")
 # identify element
 l=s.find_element_by_css_selector("h4")
 # get text and print
-print("Text is: " + l.text)
+print("Text is : " + l.text)
+
+
+
+text = pyperclip.paste()
+
+pyperclip.copy(text)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
